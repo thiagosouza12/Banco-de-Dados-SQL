@@ -1,0 +1,31 @@
+# Exercícios de Banco de Dados e SQL
+
+Repositório dedicado aos estudos de modelagem de dados e linguagem SQL (DDL, DML e DQL).
+
+## 📂 Estrutura de Pastas
+
+- `01-ddl-estrutura/`: Scripts de criação e alteração de tabelas (`CREATE`, `ALTER`, `DROP`).
+- `02-dml-consultas/`: Exercícios práticos de consulta (`SELECT`, `WHERE`, `JOIN`, `GROUP BY`).
+
+## 🛢️ SGBDs Utilizados
+- PostgreSQL / MySQL / SQLite
+## Exercício básico.
+-- 1. Criação da tabela de Alunos
+CREATE TABLE alunos (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    curso VARCHAR(50) NOT NULL,
+    nota DECIMAL(4,2)
+);
+
+-- 2. Inserção de dados de teste
+INSERT INTO alunos (nome, curso, nota) VALUES
+('Ana Silva', 'Engenharia de Software', 9.5),
+('Carlos Souza', 'Ciência da Computação', 7.0),
+('Beatriz Lima', 'Engenharia de Software', 8.0);
+
+-- 3. Consulta: Listar alunos de Engenharia de Software com nota maior que 8
+SELECT nome, nota 
+FROM alunos 
+WHERE curso = 'Engenharia de Software' AND nota >= 8.0
+ORDER BY nota DESC;
